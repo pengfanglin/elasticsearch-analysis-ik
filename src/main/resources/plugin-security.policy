@@ -1,0 +1,6 @@
+grant {
+  // needed because of the hot reload functionality
+  permission java.net.SocketPermission "*", "connect,resolve";
+  permission javax.management.MBeanServerPermission "*", "createMBeanServer";
+  permission java.lang.RuntimePermission "*";
+};

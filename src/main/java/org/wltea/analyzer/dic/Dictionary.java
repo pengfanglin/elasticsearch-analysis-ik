@@ -179,7 +179,7 @@ public class Dictionary {
 	private void loadRedisDict(String type) {
 		logger.info("开始加载{}",type);
 		Jedis jedis= JedisUtils.getJedis();
-		Set<String> words=jedis.smembers("hot_word");
+		Set<String> words=jedis.smembers(type.equals("热词")?"hot_word":"stop_word");
 		if(words==null||words.size()==0){
 			logger.info("未加载{}",type);
 		}else{
